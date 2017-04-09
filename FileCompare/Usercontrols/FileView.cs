@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace FileCompare
 {
@@ -23,19 +24,22 @@ namespace FileCompare
             {
                 if (result == DialogResult.OK)
                 {
-                    if (Path.GetExtension(dialog.FileName) == "*.rtf")
+                    if (Path.GetExtension(dialog.FileName) == ".rtf")
                     {
                         this.richTBFileView.LoadFile(dialog.FileName, RichTextBoxStreamType.RichText);
                         this.Text = dialog.FileName;
                     }
-                    if (Path.GetExtension(dialog.FileName) == "*.txt")
+                    if (Path.GetExtension(dialog.FileName) == ".txt")
                     {
                         this.richTBFileView.LoadFile(dialog.FileName, RichTextBoxStreamType.PlainText);
                         this.Text = dialog.FileName;
                     }
-                    if (Path.GetExtension(dialog.FileName) == "*.xml")
+                    if (Path.GetExtension(dialog.FileName) == ".xml")
                     {
-                        // TODO add xml loading and parsing functions
+                        XmlDocument parsedStream = new XmlDocument();
+                        parsedStream.Load(dialog.FileName);
+                        this.richTBFileView.LoadFile(dialog.FileName);
+                        this.Text = dialog.FileName;
                     }
                 }
             }

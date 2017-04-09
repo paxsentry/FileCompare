@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\XMLLoader.cs" />
     <Compile Include="Usercontrols\FooterInfoBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
