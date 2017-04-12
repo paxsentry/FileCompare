@@ -46,7 +46,9 @@
             // 
             // splitContainer
             // 
-            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer.Location = new System.Drawing.Point(0, 24);
             this.splitContainer.Name = "splitContainer";
             // 
@@ -57,7 +59,7 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.ucFileView2);
-            this.splitContainer.Size = new System.Drawing.Size(1484, 937);
+            this.splitContainer.Size = new System.Drawing.Size(1484, 883);
             this.splitContainer.SplitterDistance = 717;
             this.splitContainer.TabIndex = 0;
             // 
@@ -66,7 +68,7 @@
             this.ucFileView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucFileView1.Location = new System.Drawing.Point(0, 0);
             this.ucFileView1.Name = "ucFileView1";
-            this.ucFileView1.Size = new System.Drawing.Size(717, 937);
+            this.ucFileView1.Size = new System.Drawing.Size(717, 883);
             this.ucFileView1.TabIndex = 0;
             // 
             // ucFileView2
@@ -74,7 +76,7 @@
             this.ucFileView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucFileView2.Location = new System.Drawing.Point(0, 0);
             this.ucFileView2.Name = "ucFileView2";
-            this.ucFileView2.Size = new System.Drawing.Size(763, 937);
+            this.ucFileView2.Size = new System.Drawing.Size(763, 883);
             this.ucFileView2.TabIndex = 0;
             // 
             // footerInfoBar1
