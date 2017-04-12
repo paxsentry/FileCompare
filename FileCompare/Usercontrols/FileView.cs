@@ -1,8 +1,10 @@
 ﻿using NLog;
 using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace FileCompare
 {
@@ -18,7 +20,7 @@ namespace FileCompare
         private void toolStripButtonOpenFile_Click(object sender, EventArgs e)
         {
             var dialog = new OpenFileDialog();
-            dialog.Filter = "Rich Text files|*.rtf|Simple Text files|*.txt|XML files|*.xml";
+            dialog.Filter = "XML files|*.xml|Rich Text files|*.rtf|Simple Text files|*.txt";
             var result = dialog.ShowDialog();
             try
             {
@@ -38,8 +40,29 @@ namespace FileCompare
                     {
                         XmlDocument parsedStream = new XmlDocument();
                         parsedStream.Load(dialog.FileName);
-                        this.richTBFileView.LoadFile(dialog.FileName);
-                        this.Text = dialog.FileName;
+                        
+                        XmlNodeList nodeList = parsedStream.GetElementsByTagName("Persons");
+
+                        XDocument xmlDoc = XDocument.Load(dialog.FileName);
+
+                        var persons = from person in xmlDoc.Descendants("Person")
+                                      select new
+                                      {
+                                          Name = person.Element("Name").Value,
+                                          City = person.Element("City").Value,
+                                          Age = person.Element("Age").Value
+                                      };
+
+                        this.Text = string.Empty;
+                        foreach (var person in persons)
+                        {
+                            this.Text = this.Text + "Name: " + person.Name + "\n";
+                            this.Text = this.Text + "City: " + person.City + "\n";
+                            this.Text = this.Text + "Age: " + person.Age + "\n\n";
+                        }
+
+                        //this.richTBFileView.LoadFile(dialog.FileName);
+                        //this.Text = dialog.FileName;
                     }
                 }
             }
