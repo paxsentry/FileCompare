@@ -36,20 +36,27 @@
             // 
             // richTBFileView
             // 
-            this.richTBFileView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTBFileView.Location = new System.Drawing.Point(0, 0);
+            this.richTBFileView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTBFileView.Location = new System.Drawing.Point(0, 28);
             this.richTBFileView.Name = "richTBFileView";
-            this.richTBFileView.Size = new System.Drawing.Size(643, 803);
+            this.richTBFileView.Size = new System.Drawing.Size(643, 775);
             this.richTBFileView.TabIndex = 0;
             this.richTBFileView.Text = "";
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonOpenFile});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.MaximumSize = new System.Drawing.Size(0, 27);
+            this.toolStrip1.MinimumSize = new System.Drawing.Size(0, 27);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(643, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(66, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
