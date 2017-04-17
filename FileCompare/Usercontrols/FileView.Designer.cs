@@ -39,11 +39,13 @@
             this.richTBFileView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTBFileView.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTBFileView.Location = new System.Drawing.Point(0, 28);
             this.richTBFileView.Name = "richTBFileView";
             this.richTBFileView.Size = new System.Drawing.Size(643, 775);
             this.richTBFileView.TabIndex = 0;
             this.richTBFileView.Text = "";
+            this.richTBFileView.TextChanged += new System.EventHandler(this.richTBFileView_TextChanged);
             // 
             // toolStrip1
             // 
@@ -56,7 +58,7 @@
             this.toolStrip1.MaximumSize = new System.Drawing.Size(0, 27);
             this.toolStrip1.MinimumSize = new System.Drawing.Size(0, 27);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(66, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(35, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -66,7 +68,7 @@
             this.toolStripButtonOpenFile.Image = global::FileCompare.Properties.Resources.folder_Open_16xLG;
             this.toolStripButtonOpenFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonOpenFile.Name = "toolStripButtonOpenFile";
-            this.toolStripButtonOpenFile.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonOpenFile.Size = new System.Drawing.Size(23, 24);
             this.toolStripButtonOpenFile.Click += new System.EventHandler(this.toolStripButtonOpenFile_Click);
             // 
             // UCFileView

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using FileCompare.Helpers;
@@ -36,7 +37,7 @@ namespace FileCompare
                     }
                     if (Path.GetExtension(dialog.FileName) == ".xml")
                     {
-                        this.richTBFileView.Text = XMLLoader.Instance.ConvertXmlToText(dialog);
+                        this.richTBFileView.Text = XMLLoader.Instance.ConvertXmlToText(dialog); ;
                     }
                 }
             }
@@ -44,6 +45,35 @@ namespace FileCompare
             {
                 logger.Error($"Exception during loading file. {ex.Message}");
                 throw;
+            }
+        }
+
+        private void richTBFileView_TextChanged(object sender, EventArgs e)
+        {
+            //XMLLoader.Instance.ColoriseResult(this.richTBFileView.Text);
+            //int index = richTBFileView.Text.IndexOf("<");
+            //int length = 1;
+
+            //richTBFileView.Select(index, length);
+            //richTBFileView.SelectionColor = System.Drawing.Color.Blue;
+
+            this.CheckKeyword("<", Color.Blue, 0);
+        }
+
+        private void CheckKeyword(string word, Color color, int startIndex)
+        {
+            if (this.richTBFileView.Text.Contains(word))
+            {
+                int index = -1;
+                int selectStart = this.richTBFileView.SelectionStart;
+
+                while((index= this.richTBFileView.Text.IndexOf(word ,(index+1))) != -1)
+                {
+                    this.richTBFileView.Select((index + startIndex), word.Length);
+                    this.richTBFileView.SelectionColor = color;
+                    this.richTBFileView.Select(selectStart, 0);
+                    this.richTBFileView.SelectionColor = Color.Black;
+                }
             }
         }
     }

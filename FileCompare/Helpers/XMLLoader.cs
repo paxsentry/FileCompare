@@ -38,6 +38,7 @@ namespace FileCompare.Helpers
                 
                 result = xmlDoc.ToString();
 
+                
                 //xmlDoc.Load(dialog.FileName);
                 //xmlNodeList = xmlDoc.("Person");
 
@@ -83,6 +84,17 @@ namespace FileCompare.Helpers
             }
 
             return result;
+        }
+
+        public void ColoriseResult(string result)
+        {
+            //for (int i = 0; i < result.Length; i++)
+            //{
+            //    if(result[i] == '<')
+            //    {
+            //        result[i]
+            //    }
+            //}
         }
     }
 }
