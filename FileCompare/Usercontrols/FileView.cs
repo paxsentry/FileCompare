@@ -1,10 +1,8 @@
-﻿using NLog;
-using System;
+﻿using System;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
-using System.Xml;
-using System.Xml.Linq;
+using FileCompare.Helpers;
+using NLog;
 
 namespace FileCompare
 {
@@ -38,50 +36,7 @@ namespace FileCompare
                     }
                     if (Path.GetExtension(dialog.FileName) == ".xml")
                     {
-                       var xmlDoc = XElement.Load(dialog.FileName);
-                        XmlNodeList xmlNodeList;
-
-                        string xmlText = "hello";
-
-                        //xmlDoc.Load(dialog.FileName);
-                        //xmlNodeList = xmlDoc.GetElementsByTagName("Person");
-
-                        //for (int i = 0; i < xmlNodeList.Count-1; i++)
-                        //{
-                        //    for (int j = 0; j < xmlNodeList[i].ChildNodes.Count-1; j++)
-                        //    {
-                        //        var temp = xmlNodeList[i].ChildNodes.Item(j).InnerText;
-                        //        temp.Trim();
-                        //        xmlText = xmlText + " " + temp;
-                        //    }
-                        //}
-
-                        this.richTBFileView.Text = xmlDoc.Value;
-                        //XmlDocument parsedStream = new XmlDocument();
-                        //parsedStream.Load(dialog.FileName);
-                        
-                        //XmlNodeList nodeList = parsedStream.GetElementsByTagName("Persons");
-
-                        //XDocument xmlDoc = XDocument.Load(dialog.FileName);
-
-                        //var persons = from person in xmlDoc.Descendants("Person")
-                        //              select new
-                        //              {
-                        //                  Name = person.Element("Name").Value,
-                        //                  City = person.Element("City").Value,
-                        //                  Age = person.Element("Age").Value
-                        //              };
-
-                        //this.Text = string.Empty;
-                        //foreach (var person in persons)
-                        //{
-                        //    this.Text = this.Text + "Name: " + person.Name + "\n";
-                        //    this.Text = this.Text + "City: " + person.City + "\n";
-                        //    this.Text = this.Text + "Age: " + person.Age + "\n\n";
-                        //}
-
-                        //this.richTBFileView.LoadFile(dialog.FileName);
-                        //this.Text = dialog.FileName;
+                        this.richTBFileView.Text = XMLLoader.Instance.ConvertXmlToText(dialog);
                     }
                 }
             }
