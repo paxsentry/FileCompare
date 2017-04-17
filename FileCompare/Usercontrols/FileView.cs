@@ -113,12 +113,22 @@ namespace FileCompare
                 }
 
                 string nodeText = content.Substring(start + 1, end - start - 1);
-                string caret = content.Substring(start, 1);
-                if (caret == "<")
+
+                string caretStart = content.Substring(start, 1);
+                if (!string.IsNullOrEmpty(caretStart))
                 {
-                    rtb.Select(start, start + 1);
+                    rtb.Select(start, 1);
                     rtb.SelectionColor = HC_STRING;
                 }
+
+                string caretEnd = content.Substring(end, 1);
+                if (!string.IsNullOrEmpty(caretEnd))
+                {
+                    rtb.Select(end, 1);
+                    rtb.SelectionColor = HC_STRING;
+                }
+
+
                 bool inString = false;
 
                 int lastString = -1;
