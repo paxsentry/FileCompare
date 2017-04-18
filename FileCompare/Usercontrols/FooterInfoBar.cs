@@ -16,5 +16,10 @@ namespace FileCompare.Usercontrols
         {
             InitializeComponent();
         }
+
+        private void btnCompare_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
