@@ -28,24 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTBFileView = new System.Windows.Forms.RichTextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonOpenFile = new System.Windows.Forms.ToolStripButton();
+            this.TextPanel = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // richTBFileView
-            // 
-            this.richTBFileView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTBFileView.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTBFileView.Location = new System.Drawing.Point(0, 28);
-            this.richTBFileView.Name = "richTBFileView";
-            this.richTBFileView.Size = new System.Drawing.Size(643, 775);
-            this.richTBFileView.TabIndex = 0;
-            this.richTBFileView.Text = "";
-            this.richTBFileView.TextChanged += new System.EventHandler(this.richTBFileView_TextChanged);
             // 
             // toolStrip1
             // 
@@ -71,14 +58,25 @@
             this.toolStripButtonOpenFile.Size = new System.Drawing.Size(23, 24);
             this.toolStripButtonOpenFile.Click += new System.EventHandler(this.toolStripButtonOpenFile_Click);
             // 
+            // TextPanel
+            // 
+            this.TextPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextPanel.Location = new System.Drawing.Point(0, 30);
+            this.TextPanel.Name = "TextPanel";
+            this.TextPanel.Size = new System.Drawing.Size(640, 773);
+            this.TextPanel.TabIndex = 2;
+            // 
             // UCFileView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.TextPanel);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.richTBFileView);
             this.Name = "UCFileView";
             this.Size = new System.Drawing.Size(643, 803);
+            this.Load += new System.EventHandler(this.UCFileView_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -87,9 +85,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox richTBFileView;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonOpenFile;
+        private System.Windows.Forms.Panel TextPanel;
     }
 }

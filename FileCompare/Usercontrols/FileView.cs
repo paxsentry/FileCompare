@@ -4,14 +4,15 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
-using FileCompare.Helpers;
 using NLog;
+using ScintillaNET;
 
 namespace FileCompare
 {
     public partial class UCFileView : UserControl
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
+        Scintilla TextArea;
 
         public static Color HC_NODE = Color.Firebrick;
         public static Color HC_STRING = Color.Blue;
@@ -35,25 +36,17 @@ namespace FileCompare
                 {
                     if (Path.GetExtension(dialog.FileName) == ".rtf")
                     {
-                        this.richTBFileView.LoadFile(dialog.FileName, RichTextBoxStreamType.RichText);
-                        this.Text = dialog.FileName;
+                        //this.richTBFileView.LoadFile(dialog.FileName, RichTextBoxStreamType.RichText);
+                        //this.Text = dialog.FileName;
                     }
                     if (Path.GetExtension(dialog.FileName) == ".txt")
                     {
-                        this.richTBFileView.LoadFile(dialog.FileName, RichTextBoxStreamType.PlainText);
-                        this.Text = dialog.FileName;
+                        //this.richTBFileView.LoadFile(dialog.FileName, RichTextBoxStreamType.PlainText);
+                        //this.Text = dialog.FileName;
                     }
                     if (Path.GetExtension(dialog.FileName) == ".xml")
                     {
-                        var xmlDoc = XElement.Load(dialog.FileName);
-
-                        XmlReader r = XmlReader.Create(dialog.FileName);
-                        while (r.NodeType != XmlNodeType.Element)
-                        {
-                            r.Read();
-                        }
-
-                        this.richTBFileView.Text = xmlDoc.ToString();
+                        TextArea.Text = File.ReadAllText(dialog.FileName);
                     }
                 }
             }
@@ -77,7 +70,7 @@ namespace FileCompare
             //this.CheckKeyword(">", Color.Blue, 0);
             //this.CheckKeyword("/", Color.Blue, 0);
 
-            XMLSyntaxHighlight(this.richTBFileView);
+           // XMLSyntaxHighlight(this.richTBFileView);
         }
 
         private void XMLSyntaxHighlight(RichTextBox rtb)
@@ -200,19 +193,107 @@ namespace FileCompare
 
         private void CheckKeyword(string word, Color color, int startIndex)
         {
-            if (this.richTBFileView.Text.Contains(word))
-            {
-                int index = -1;
-                int selectStart = this.richTBFileView.SelectionStart;
+            //if (this.richTBFileView.Text.Contains(word))
+            //{
+            //    int index = -1;
+            //    int selectStart = this.richTBFileView.SelectionStart;
 
-                while ((index = this.richTBFileView.Text.IndexOf(word, (index + 1))) != -1)
-                {
-                    this.richTBFileView.Select((index + startIndex), word.Length);
-                    this.richTBFileView.SelectionColor = color;
-                    this.richTBFileView.Select(selectStart, 0);
-                    this.richTBFileView.SelectionColor = Color.Black;
-                }
+            //    while ((index = this.richTBFileView.Text.IndexOf(word, (index + 1))) != -1)
+            //    {
+            //        this.richTBFileView.Select((index + startIndex), word.Length);
+            //        this.richTBFileView.SelectionColor = color;
+            //        this.richTBFileView.Select(selectStart, 0);
+            //        this.richTBFileView.SelectionColor = Color.Black;
+            //    }
+            //}
+        }
+
+        private void UCFileView_Load(object sender, EventArgs e)
+        {
+            TextArea = new Scintilla();
+            TextPanel.Controls.Add(TextArea);
+
+            // BASIC CONFIG
+            TextArea.Dock = DockStyle.Fill;
+
+            // INITIAL VIEW CONFIG
+            TextArea.WrapMode = WrapMode.None;
+            TextArea.IndentationGuides = IndentView.LookBoth;
+
+            // STYLING
+            InitColors();
+            InitSyntaxColoring();
+        }
+
+        private void InitColors()
+        {
+            TextArea.SetSelectionBackColor(true, IntToColor(0x114D9C));
+        }
+
+        private void InitSyntaxColoring()
+        {
+            // Reset the styles
+            TextArea.StyleResetDefault();
+            TextArea.Styles[Style.Default].Font = "Consolas";
+            TextArea.Styles[Style.Default].Size = 10;
+            TextArea.StyleClearAll();
+
+            // Set the XML Lexer
+            TextArea.Lexer = Lexer.Xml;
+
+            // Show line numbers
+            TextArea.Margins[0].Width = 20;
+
+            // Enable folding
+            TextArea.SetProperty("fold", "1");
+            TextArea.SetProperty("fold.compact", "1");
+            TextArea.SetProperty("fold.html", "1");
+
+            // Use Margin 2 for fold markers
+            TextArea.Margins[2].Type = MarginType.Symbol;
+            TextArea.Margins[2].Mask = Marker.MaskFolders;
+            TextArea.Margins[2].Sensitive = true;
+            TextArea.Margins[2].Width = 20;
+
+            // Reset folder markers
+            for (int i = Marker.FolderEnd; i <= Marker.FolderOpen; i++)
+            {
+                TextArea.Markers[i].SetForeColor(SystemColors.ControlLightLight);
+                TextArea.Markers[i].SetBackColor(SystemColors.ControlDark);
             }
+
+            // Style the folder markers
+            TextArea.Markers[Marker.Folder].Symbol = MarkerSymbol.BoxPlus;
+            TextArea.Markers[Marker.Folder].SetBackColor(SystemColors.ControlText);
+            TextArea.Markers[Marker.FolderOpen].Symbol = MarkerSymbol.BoxMinus;
+            TextArea.Markers[Marker.FolderEnd].Symbol = MarkerSymbol.BoxPlusConnected;
+            TextArea.Markers[Marker.FolderEnd].SetBackColor(SystemColors.ControlText);
+            TextArea.Markers[Marker.FolderMidTail].Symbol = MarkerSymbol.TCorner;
+            TextArea.Markers[Marker.FolderOpenMid].Symbol = MarkerSymbol.BoxMinusConnected;
+            TextArea.Markers[Marker.FolderSub].Symbol = MarkerSymbol.VLine;
+            TextArea.Markers[Marker.FolderTail].Symbol = MarkerSymbol.LCorner;
+
+            // Enable automatic folding
+            TextArea.AutomaticFold = AutomaticFold.Show | AutomaticFold.Click | AutomaticFold.Change;
+
+            // Set the Styles
+            TextArea.StyleResetDefault();
+            // I like fixed font for XML
+            TextArea.Styles[Style.Default].Font = "Courier";
+            TextArea.Styles[Style.Default].Size = 10;
+            TextArea.StyleClearAll();
+            TextArea.Styles[Style.Xml.Attribute].ForeColor = Color.Red;
+            TextArea.Styles[Style.Xml.Entity].ForeColor = Color.Red;
+            TextArea.Styles[Style.Xml.Comment].ForeColor = Color.Green;
+            TextArea.Styles[Style.Xml.Tag].ForeColor = Color.Blue;
+            TextArea.Styles[Style.Xml.TagEnd].ForeColor = Color.Blue;
+            TextArea.Styles[Style.Xml.DoubleString].ForeColor = Color.DeepPink;
+            TextArea.Styles[Style.Xml.SingleString].ForeColor = Color.DeepPink;
+        }
+
+        public static Color IntToColor(int rgb)
+        {
+            return Color.FromArgb(255, (byte)(rgb >> 16), (byte)(rgb >> 8), (byte)rgb);
         }
     }
 }
