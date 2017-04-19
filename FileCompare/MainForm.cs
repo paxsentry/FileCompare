@@ -12,6 +12,10 @@ namespace FileCompare
 {
     public partial class MainForm : Form
     {
+        public UserControl LeftPanel { get { return ucFileViewLeft; } }
+
+        public UserControl RightPanel { get { return ucFileViewRight; } }
+
         public MainForm()
         {
             InitializeComponent();

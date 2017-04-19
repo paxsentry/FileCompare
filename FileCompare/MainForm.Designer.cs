@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.ucFileView1 = new FileCompare.UCFileView();
-            this.ucFileView2 = new FileCompare.UCFileView();
+            this.ucFileViewLeft = new FileCompare.UCFileView();
+            this.ucFileViewRight = new FileCompare.UCFileView();
             this.footerInfoBar1 = new FileCompare.Usercontrols.FooterInfoBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,30 +54,30 @@
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.Controls.Add(this.ucFileView1);
+            this.splitContainer.Panel1.Controls.Add(this.ucFileViewLeft);
             // 
             // splitContainer.Panel2
             // 
-            this.splitContainer.Panel2.Controls.Add(this.ucFileView2);
+            this.splitContainer.Panel2.Controls.Add(this.ucFileViewRight);
             this.splitContainer.Size = new System.Drawing.Size(1484, 883);
             this.splitContainer.SplitterDistance = 739;
             this.splitContainer.TabIndex = 0;
             // 
-            // ucFileView1
+            // ucFileViewLeft
             // 
-            this.ucFileView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucFileView1.Location = new System.Drawing.Point(0, 0);
-            this.ucFileView1.Name = "ucFileView1";
-            this.ucFileView1.Size = new System.Drawing.Size(739, 883);
-            this.ucFileView1.TabIndex = 0;
+            this.ucFileViewLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucFileViewLeft.Location = new System.Drawing.Point(0, 0);
+            this.ucFileViewLeft.Name = "ucFileViewLeft";
+            this.ucFileViewLeft.Size = new System.Drawing.Size(739, 883);
+            this.ucFileViewLeft.TabIndex = 0;
             // 
-            // ucFileView2
+            // ucFileViewRight
             // 
-            this.ucFileView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucFileView2.Location = new System.Drawing.Point(0, 0);
-            this.ucFileView2.Name = "ucFileView2";
-            this.ucFileView2.Size = new System.Drawing.Size(741, 883);
-            this.ucFileView2.TabIndex = 0;
+            this.ucFileViewRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucFileViewRight.Location = new System.Drawing.Point(0, 0);
+            this.ucFileViewRight.Name = "ucFileViewRight";
+            this.ucFileViewRight.Size = new System.Drawing.Size(741, 883);
+            this.ucFileViewRight.TabIndex = 0;
             // 
             // footerInfoBar1
             // 
@@ -144,8 +144,8 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer;
-        private UCFileView ucFileView1;
-        private UCFileView ucFileView2;
+        private UCFileView ucFileViewLeft;
+        private UCFileView ucFileViewRight;
         private Usercontrols.FooterInfoBar footerInfoBar1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
