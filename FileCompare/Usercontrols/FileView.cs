@@ -2,12 +2,13 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using FileCompare.Interfaces;
 using NLog;
 using ScintillaNET;
 
 namespace FileCompare
 {
-    public partial class UCFileView : UserControl
+    public partial class UCFileView : UserControl, IFileView
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
         Scintilla TextArea;

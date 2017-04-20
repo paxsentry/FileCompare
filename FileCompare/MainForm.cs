@@ -7,18 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FileCompare.Interfaces;
 
 namespace FileCompare
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IMainFormView
     {
-        public UserControl LeftPanel { get { return ucFileViewLeft; } }
+        private readonly UCFileView _leftPanel;
+        private readonly UCFileView _rightPanel;
 
-        public UserControl RightPanel { get { return ucFileViewRight; } }
+        public IFileView LeftFileView { get { return _leftPanel; } }
+        public IFileView RightFileView { get { return _rightPanel; } }
 
         public MainForm()
         {
             InitializeComponent();
+            _leftPanel = new UCFileView();
         }
 
         private void footerInfoBar1_Load(object sender, EventArgs e)

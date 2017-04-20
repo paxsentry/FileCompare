@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using FileCompare.Presenters;
 
 namespace FileCompare
 {
@@ -10,7 +11,9 @@ namespace FileCompare
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            var mainForm = new MainForm();
+            var presenter = new MainFormPresenter(mainForm);
+            Application.Run(mainForm);
         }
     }
 }
