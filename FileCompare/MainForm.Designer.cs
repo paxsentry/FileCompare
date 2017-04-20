@@ -86,7 +86,6 @@
             this.footerInfoBar1.Name = "footerInfoBar1";
             this.footerInfoBar1.Size = new System.Drawing.Size(1484, 48);
             this.footerInfoBar1.TabIndex = 1;
-            this.footerInfoBar1.Load += new System.EventHandler(this.footerInfoBar1_Load);
             // 
             // menuStrip1
             // 
