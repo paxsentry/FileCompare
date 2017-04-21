@@ -24,6 +24,11 @@ namespace FileCompare
             InitializeComponent();
         }
 
+        public void SetFilePathAndName(string filePathAndName)
+        {
+            lblFilePathAndName.Text = filePathAndName;
+        }
+
         private void toolStripButtonOpenFile_Click(object sender, EventArgs e)
         {
             var dialog = new OpenFileDialog();
@@ -34,6 +39,7 @@ namespace FileCompare
                 if (result == DialogResult.OK)
                 {
                     TextArea.Text = File.ReadAllText(dialog.FileName);
+                    SetFilePathAndName(dialog.FileName);
                     // TODO check file type and modify scintilla settings.
                 }
             }
@@ -133,5 +139,6 @@ namespace FileCompare
         {
             return Color.FromArgb(255, (byte)(rgb >> 16), (byte)(rgb >> 8), (byte)rgb);
         }
+
     }
 }

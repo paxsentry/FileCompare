@@ -8,5 +8,6 @@ namespace FileCompare.Interfaces
 {
     public interface IFileView
     {
+        void SetFilePathAndName(string filePathAndName);
     }
 }
