@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\ScintillaSettings.cs" />
     <Compile Include="Interfaces\IFileView.cs" />
     <Compile Include="Interfaces\IMainFormView.cs" />
     <Compile Include="Presenters\FileViewPresenter.cs" />
@@ -124,7 +125,6 @@
     <None Include="Resources\folder_Open_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Helpers\" />
     <Folder Include="Logic\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
