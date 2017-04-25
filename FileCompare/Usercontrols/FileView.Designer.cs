@@ -57,7 +57,7 @@
             this.toolStripButtonOpenFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonOpenFile.Name = "toolStripButtonOpenFile";
             this.toolStripButtonOpenFile.Size = new System.Drawing.Size(23, 24);
-            this.toolStripButtonOpenFile.Click += new System.EventHandler(this.toolStripButtonOpenFile_Click);
+            //this.toolStripButtonOpenFile.Click += new System.EventHandler(this.toolStripButtonOpenFile_Click);
             // 
             // TextPanel
             // 
@@ -87,7 +87,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "UCFileView";
             this.Size = new System.Drawing.Size(643, 803);
-            this.Load += new System.EventHandler(this.UCFileView_Load);
+            //this.Load += new System.EventHandler(this.UCFileView_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

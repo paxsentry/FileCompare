@@ -1,13 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
+using FileCompare.Presenters;
 
 namespace FileCompare.Interfaces
 {
     public interface IFileView
     {
+        string FileNameAndPath { set; }
+        Panel TextPanelControl { get; }
+
+        FileViewPresenter Presenter { set; }
+
         void SetFilePathAndName(string filePathAndName);
+
+        event EventHandler LoadFileClicked;
     }
 }

@@ -18,8 +18,16 @@ namespace FileCompare
             AppDomain.CurrentDomain.UnhandledException += CurrentDomainUnhandledException;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // TODO: IoC
             var mainForm = new MainForm();
-            var presenter = new MainFormPresenter(mainForm);
+            var mainPresenter = new MainFormPresenter(mainForm);
+
+            var leftPanel = mainForm.LeftFileView;
+            var rightPanel = mainForm.RightFileView;
+            var leftPresenter = new FileViewPresenter(leftPanel);
+            var rightPresenter = new FileViewPresenter(rightPanel);
+
             Application.Run(mainForm);
         }
 
