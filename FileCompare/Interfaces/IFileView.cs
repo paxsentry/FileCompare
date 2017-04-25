@@ -11,8 +11,6 @@ namespace FileCompare.Interfaces
 
         FileViewPresenter Presenter { set; }
 
-        void SetFilePathAndName(string filePathAndName);
-
         event EventHandler LoadFileClicked;
     }
 }

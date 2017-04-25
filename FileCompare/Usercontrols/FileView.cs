@@ -27,9 +27,6 @@ namespace FileCompare
             remove { toolStripButtonOpenFile.Click -= value; }
         }
 
-        public void SetFilePathAndName(string filePathAndName)
-        {
-            lblFilePathAndName.Text = filePathAndName;
-        }
+       
     }
 }

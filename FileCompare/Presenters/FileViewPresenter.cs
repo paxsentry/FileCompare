@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using FileCompare.Helpers;
@@ -34,6 +33,7 @@ namespace FileCompare.Presenters
                 if (result == DialogResult.OK)
                 {
                     TextArea.Text = File.ReadAllText(dialog.FileName);
+                    SetFilePathAndName(dialog.FileName);
                     ScintillaSettings.SetupXML(TextArea);
                     // TODO check file type and modify scintilla settings.
                 }
@@ -50,6 +50,11 @@ namespace FileCompare.Presenters
             TextArea = new Scintilla();
             ScintillaTextPanel.Controls.Add(TextArea);
             ScintillaSettings.SetupScintilla(TextArea);
+        }
+
+        private void SetFilePathAndName(string filePathAndName)
+        {
+            _fileView.FileNameAndPath = filePathAndName;
         }
     }
 }
