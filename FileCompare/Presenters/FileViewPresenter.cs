@@ -11,12 +11,14 @@ namespace FileCompare.Presenters
     {
         private readonly UCFileView _fileView;
         private readonly Panel ScintillaTextPanel;
+        private readonly FooterInfoBar _footer;
         private static Logger logger = LogManager.GetCurrentClassLogger();
         Scintilla TextArea;
 
-        public FileViewPresenter(UCFileView fileView)
+        public FileViewPresenter(UCFileView fileView, FooterInfoBar footer)
         {
             _fileView = fileView;
+            _footer = footer;
             fileView.Presenter = this;
             ScintillaTextPanel = _fileView.TextPanelControl;
             _fileView.Load += UCFileView_Load;
@@ -26,6 +28,7 @@ namespace FileCompare.Presenters
         private void toolStripButtonOpenFile_Click(object sender, EventArgs e)
         {
             var dialog = new OpenFileDialog();
+            var leftOrRight = ((ToolStripButton)sender).Name;
             //   dialog.Filter = "XML files|*.xml|Rich Text files|*.rtf|Simple Text files|*.txt";
             var result = dialog.ShowDialog();
             try
@@ -35,6 +38,10 @@ namespace FileCompare.Presenters
                     TextArea.Text = File.ReadAllText(dialog.FileName);
                     SetFilePathAndName(dialog.FileName);
                     ScintillaSettings.SetupXML(TextArea);
+
+                    FileInfo f = new FileInfo(dialog.FileName);
+
+                    _footer.LeftFileSizeLabel = HelperFunctions.BytesToString(f.Length);
                     // TODO if (Path.GetExtension(dialog.FileName) == ".rtf") { }
                     // TODO check file type and modify scintilla settings.
                 }
@@ -57,5 +64,7 @@ namespace FileCompare.Presenters
         {
             _fileView.FileNameAndPath = filePathAndName;
         }
+
+
     }
 }

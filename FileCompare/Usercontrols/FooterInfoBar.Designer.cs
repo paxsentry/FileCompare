@@ -58,9 +58,8 @@
             this.lblLeftFileSize.AutoSize = true;
             this.lblLeftFileSize.Location = new System.Drawing.Point(3, 3);
             this.lblLeftFileSize.Name = "lblLeftFileSize";
-            this.lblLeftFileSize.Size = new System.Drawing.Size(35, 13);
+            this.lblLeftFileSize.Size = new System.Drawing.Size(0, 13);
             this.lblLeftFileSize.TabIndex = 2;
-            this.lblLeftFileSize.Text = "label1";
             // 
             // lblRightFileSize
             // 
@@ -68,9 +67,8 @@
             this.lblRightFileSize.AutoSize = true;
             this.lblRightFileSize.Location = new System.Drawing.Point(1180, 4);
             this.lblRightFileSize.Name = "lblRightFileSize";
-            this.lblRightFileSize.Size = new System.Drawing.Size(35, 13);
+            this.lblRightFileSize.Size = new System.Drawing.Size(0, 13);
             this.lblRightFileSize.TabIndex = 3;
-            this.lblRightFileSize.Text = "label1";
             // 
             // FooterInfoBar
             // 

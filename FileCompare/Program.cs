@@ -27,8 +27,8 @@ namespace FileCompare
             var rightPanel = mainForm.RightFileView;
             var footer = mainForm.Footer;
 
-            var leftPresenter = new FileViewPresenter(leftPanel);
-            var rightPresenter = new FileViewPresenter(rightPanel);
+            var leftPresenter = new FileViewPresenter(leftPanel, footer);
+            var rightPresenter = new FileViewPresenter(rightPanel,footer);
             var footerPresenter = new FooterViewPresenter(footer);
 
             Application.Run(mainForm);
