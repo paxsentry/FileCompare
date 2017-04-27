@@ -29,7 +29,7 @@ namespace FileCompare
 
             var leftPresenter = new FileViewPresenter(leftPanel);
             var rightPresenter = new FileViewPresenter(rightPanel);
-            var footerPresenter = new FooterViewPresenter();
+            var footerPresenter = new FooterViewPresenter(footer);
 
             Application.Run(mainForm);
         }

@@ -9,14 +9,17 @@ namespace FileCompare.Presenters
 {
     public class FooterViewPresenter
     {
-        public FooterViewPresenter()
-        {
+        private FooterInfoBar _footer;
 
+        public FooterViewPresenter(FooterInfoBar footer)
+        {
+            _footer = footer;
+            footer.Presenter = this;
+            _footer.CompareButtonClick += btnCompare_Click;
         }
 
         private void btnCompare_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Jipppiiii!!!!");
             //UserControl LeftPanel = (this.Parent as MainForm).Controls["SplitContainer"] as UserControl;
             //UserControl RightPanel = (this.Parent as MainForm).Controls["RightPanel"] as UserControl;
 
@@ -24,6 +27,8 @@ namespace FileCompare.Presenters
             //{
             //    MessageBox.Show("Jipppiiii!!!!");
             //}
+
+
         }
     }
 }

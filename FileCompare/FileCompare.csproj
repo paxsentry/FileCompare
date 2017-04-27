@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +59,7 @@
     <Compile Include="Interfaces\IFileView.cs" />
     <Compile Include="Interfaces\IFooterView.cs" />
     <Compile Include="Interfaces\IMainFormView.cs" />
+    <Compile Include="Logic\DiffMatchPatch.cs" />
     <Compile Include="Presenters\FileViewPresenter.cs" />
     <Compile Include="Presenters\FooterViewPresenter.cs" />
     <Compile Include="Presenters\MainFormPresenter.cs" />
@@ -126,8 +128,6 @@
   <ItemGroup>
     <None Include="Resources\folder_Open_16xLG.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logic\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
