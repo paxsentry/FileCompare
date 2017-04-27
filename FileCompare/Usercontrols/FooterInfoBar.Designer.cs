@@ -1,4 +1,4 @@
-﻿namespace FileCompare.Usercontrols
+﻿namespace FileCompare
 {
     partial class FooterInfoBar
     {
@@ -30,6 +30,8 @@
         {
             this.labelFooterInfo = new System.Windows.Forms.Label();
             this.btnCompare = new System.Windows.Forms.Button();
+            this.lblLeftFileSize = new System.Windows.Forms.Label();
+            this.lblRightFileSize = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelFooterInfo
@@ -43,19 +45,40 @@
             // 
             // btnCompare
             // 
-            this.btnCompare.Location = new System.Drawing.Point(598, 15);
+            this.btnCompare.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCompare.Location = new System.Drawing.Point(560, 3);
             this.btnCompare.Name = "btnCompare";
-            this.btnCompare.Size = new System.Drawing.Size(75, 23);
+            this.btnCompare.Size = new System.Drawing.Size(75, 42);
             this.btnCompare.TabIndex = 1;
             this.btnCompare.Text = "Compare";
             this.btnCompare.UseVisualStyleBackColor = true;
-            this.btnCompare.Click += new System.EventHandler(this.btnCompare_Click);
+            // 
+            // lblLeftFileSize
+            // 
+            this.lblLeftFileSize.AutoSize = true;
+            this.lblLeftFileSize.Location = new System.Drawing.Point(3, 3);
+            this.lblLeftFileSize.Name = "lblLeftFileSize";
+            this.lblLeftFileSize.Size = new System.Drawing.Size(35, 13);
+            this.lblLeftFileSize.TabIndex = 2;
+            this.lblLeftFileSize.Text = "label1";
+            // 
+            // lblRightFileSize
+            // 
+            this.lblRightFileSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRightFileSize.AutoSize = true;
+            this.lblRightFileSize.Location = new System.Drawing.Point(1180, 4);
+            this.lblRightFileSize.Name = "lblRightFileSize";
+            this.lblRightFileSize.Size = new System.Drawing.Size(35, 13);
+            this.lblRightFileSize.TabIndex = 3;
+            this.lblRightFileSize.Text = "label1";
             // 
             // FooterInfoBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnCompare);
+            this.Controls.Add(this.lblRightFileSize);
+            this.Controls.Add(this.lblLeftFileSize);
             this.Controls.Add(this.labelFooterInfo);
             this.Name = "FooterInfoBar";
             this.Size = new System.Drawing.Size(1218, 48);
@@ -68,5 +91,7 @@
 
         private System.Windows.Forms.Label labelFooterInfo;
         private System.Windows.Forms.Button btnCompare;
+        private System.Windows.Forms.Label lblLeftFileSize;
+        private System.Windows.Forms.Label lblRightFileSize;
     }
 }

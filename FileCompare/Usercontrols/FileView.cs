@@ -26,7 +26,5 @@ namespace FileCompare
             add { toolStripButtonOpenFile.Click += value; }
             remove { toolStripButtonOpenFile.Click -= value; }
         }
-
-       
     }
 }

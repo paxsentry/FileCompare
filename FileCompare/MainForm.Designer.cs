@@ -32,7 +32,7 @@
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.ucFileViewLeft = new FileCompare.UCFileView();
             this.ucFileViewRight = new FileCompare.UCFileView();
-            this.footerInfoBar1 = new FileCompare.Usercontrols.FooterInfoBar();
+            this.footerInfoBar = new FileCompare.FooterInfoBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,13 +79,14 @@
             this.ucFileViewRight.Size = new System.Drawing.Size(741, 883);
             this.ucFileViewRight.TabIndex = 0;
             // 
-            // footerInfoBar1
+            // footerInfoBar
             // 
-            this.footerInfoBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.footerInfoBar1.Location = new System.Drawing.Point(0, 913);
-            this.footerInfoBar1.Name = "footerInfoBar1";
-            this.footerInfoBar1.Size = new System.Drawing.Size(1484, 48);
-            this.footerInfoBar1.TabIndex = 1;
+            this.footerInfoBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.footerInfoBar.Location = new System.Drawing.Point(0, 913);
+            this.footerInfoBar.Name = "footerInfoBar";
+            this.footerInfoBar.Size = new System.Drawing.Size(1484, 48);
+            this.footerInfoBar.TabIndex = 1;
             // 
             // menuStrip1
             // 
@@ -122,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 961);
-            this.Controls.Add(this.footerInfoBar1);
+            this.Controls.Add(this.footerInfoBar);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -145,7 +146,7 @@
         private System.Windows.Forms.SplitContainer splitContainer;
         private UCFileView ucFileViewLeft;
         private UCFileView ucFileViewRight;
-        private Usercontrols.FooterInfoBar footerInfoBar1;
+        private FooterInfoBar footerInfoBar;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;

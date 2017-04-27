@@ -1,31 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using FileCompare.Interfaces;
+using FileCompare.Presenters;
+using NLog;
 
-namespace FileCompare.Usercontrols
+namespace FileCompare
 {
-    public partial class FooterInfoBar : UserControl
+    public partial class FooterInfoBar : UserControl, IFooterView
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public FooterInfoBar()
         {
             InitializeComponent();
         }
 
-        private void btnCompare_Click(object sender, EventArgs e)
-        {
-            UserControl LeftPanel = (this.Parent as MainForm).Controls["SplitContainer"] as UserControl;
-            UserControl RightPanel = (this.Parent as MainForm).Controls["RightPanel"] as UserControl;
+        public string LeftFileSizeLabel { set { lblLeftFileSize.Text = value; } }
 
-            if(LeftPanel != null && RightPanel != null)
-            {
-                MessageBox.Show("Jipppiiii!!!!");
-            }
+        public string RightFileSizeLabel { set { lblRightFileSize.Text = value; } }
+
+        public Button CompareButton { get { return btnCompare; } }
+
+        public FooterViewPresenter Presenter { private get; set; }
+
+        public event EventHandler CompareButtonClick
+        {
+            add { btnCompare.Click += value; }
+            remove { btnCompare.Click -= value; }
         }
     }
 }

@@ -35,6 +35,7 @@ namespace FileCompare.Presenters
                     TextArea.Text = File.ReadAllText(dialog.FileName);
                     SetFilePathAndName(dialog.FileName);
                     ScintillaSettings.SetupXML(TextArea);
+                    // TODO if (Path.GetExtension(dialog.FileName) == ".rtf") { }
                     // TODO check file type and modify scintilla settings.
                 }
             }

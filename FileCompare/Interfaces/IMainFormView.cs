@@ -4,5 +4,6 @@
     {
         UCFileView LeftFileView { get; }
         UCFileView RightFileView { get; }
+        FooterInfoBar Footer { get; }
     }
 }

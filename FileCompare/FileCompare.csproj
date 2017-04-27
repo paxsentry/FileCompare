@@ -56,8 +56,10 @@
   <ItemGroup>
     <Compile Include="Helpers\ScintillaSettings.cs" />
     <Compile Include="Interfaces\IFileView.cs" />
+    <Compile Include="Interfaces\IFooterView.cs" />
     <Compile Include="Interfaces\IMainFormView.cs" />
     <Compile Include="Presenters\FileViewPresenter.cs" />
+    <Compile Include="Presenters\FooterViewPresenter.cs" />
     <Compile Include="Presenters\MainFormPresenter.cs" />
     <Compile Include="Usercontrols\FooterInfoBar.cs">
       <SubType>UserControl</SubType>
