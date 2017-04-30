@@ -59,7 +59,7 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.ucFileViewRight);
-            this.splitContainer.Size = new System.Drawing.Size(1484, 883);
+            this.splitContainer.Size = new System.Drawing.Size(1484, 897);
             this.splitContainer.SplitterDistance = 739;
             this.splitContainer.TabIndex = 0;
             // 
@@ -68,7 +68,7 @@
             this.ucFileViewLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucFileViewLeft.Location = new System.Drawing.Point(0, 0);
             this.ucFileViewLeft.Name = "ucFileViewLeft";
-            this.ucFileViewLeft.Size = new System.Drawing.Size(739, 883);
+            this.ucFileViewLeft.Size = new System.Drawing.Size(739, 897);
             this.ucFileViewLeft.TabIndex = 0;
             // 
             // ucFileViewRight
@@ -76,16 +76,16 @@
             this.ucFileViewRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucFileViewRight.Location = new System.Drawing.Point(0, 0);
             this.ucFileViewRight.Name = "ucFileViewRight";
-            this.ucFileViewRight.Size = new System.Drawing.Size(741, 883);
+            this.ucFileViewRight.Size = new System.Drawing.Size(741, 897);
             this.ucFileViewRight.TabIndex = 0;
             // 
             // footerInfoBar
             // 
             this.footerInfoBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.footerInfoBar.Location = new System.Drawing.Point(0, 913);
+            this.footerInfoBar.Location = new System.Drawing.Point(0, 927);
             this.footerInfoBar.Name = "footerInfoBar";
-            this.footerInfoBar.Size = new System.Drawing.Size(1484, 48);
+            this.footerInfoBar.Size = new System.Drawing.Size(1484, 34);
             this.footerInfoBar.TabIndex = 1;
             // 
             // menuStrip1

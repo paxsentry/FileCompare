@@ -16,11 +16,10 @@ namespace FileCompare
         }
 
         public string LeftFileSizeLabel { set { lblLeftFileSize.Text = value; } }
-        public string RightFileSizeLabel { set { lblRightFileSize.Text = value; } }
-
         public string LeftFileModifiedDateLabel { set { lblLeftFileModDate.Text = value; } }
         public string LeftFileCreatedDateLabel { set { lblLeftFileCreateDate.Text = value; } }
 
+        public string RightFileSizeLabel { set { lblRightFileSize.Text = value; } }
         public string RightFileModifiedDateLabel { set { lblRightFileModDate.Text = value; } }
         public string RightFileCreatedDateLabel { set { lblRightFileCreateDate.Text = value; } }
 

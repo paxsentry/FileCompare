@@ -55,20 +55,19 @@
             // 
             // btnCompare
             // 
-            this.btnCompare.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCompare.Location = new System.Drawing.Point(1140, 1);
+            this.btnCompare.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCompare.Location = new System.Drawing.Point(1140, 3);
             this.btnCompare.Name = "btnCompare";
-            this.btnCompare.Size = new System.Drawing.Size(75, 42);
+            this.btnCompare.Size = new System.Drawing.Size(75, 28);
             this.btnCompare.TabIndex = 1;
             this.btnCompare.Text = "Compare";
             this.btnCompare.UseVisualStyleBackColor = true;
             // 
             // lblLeftFileSize
             // 
-            this.lblLeftFileSize.AutoSize = true;
             this.lblLeftFileSize.Location = new System.Drawing.Point(56, 4);
             this.lblLeftFileSize.Name = "lblLeftFileSize";
-            this.lblLeftFileSize.Size = new System.Drawing.Size(40, 13);
+            this.lblLeftFileSize.Size = new System.Drawing.Size(80, 13);
             this.lblLeftFileSize.TabIndex = 2;
             this.lblLeftFileSize.Text = "fileSize";
             // 
@@ -110,10 +109,9 @@
             // 
             // FileCreateDateLeft
             // 
-            this.FileCreateDateLeft.AutoSize = true;
             this.FileCreateDateLeft.Location = new System.Drawing.Point(138, 3);
             this.FileCreateDateLeft.Name = "FileCreateDateLeft";
-            this.FileCreateDateLeft.Size = new System.Drawing.Size(80, 13);
+            this.FileCreateDateLeft.Size = new System.Drawing.Size(102, 15);
             this.FileCreateDateLeft.TabIndex = 7;
             this.FileCreateDateLeft.Text = "File created on:";
             // 
@@ -128,10 +126,9 @@
             // 
             // FileCreateDateRight
             // 
-            this.FileCreateDateRight.AutoSize = true;
             this.FileCreateDateRight.Location = new System.Drawing.Point(747, 3);
             this.FileCreateDateRight.Name = "FileCreateDateRight";
-            this.FileCreateDateRight.Size = new System.Drawing.Size(80, 13);
+            this.FileCreateDateRight.Size = new System.Drawing.Size(102, 13);
             this.FileCreateDateRight.TabIndex = 13;
             this.FileCreateDateRight.Text = "File created on:";
             // 
@@ -164,10 +161,9 @@
             // 
             // lblRightFileSize
             // 
-            this.lblRightFileSize.AutoSize = true;
             this.lblRightFileSize.Location = new System.Drawing.Point(665, 4);
             this.lblRightFileSize.Name = "lblRightFileSize";
-            this.lblRightFileSize.Size = new System.Drawing.Size(40, 13);
+            this.lblRightFileSize.Size = new System.Drawing.Size(80, 13);
             this.lblRightFileSize.TabIndex = 9;
             this.lblRightFileSize.Text = "fileSize";
             // 
@@ -190,7 +186,7 @@
             this.Controls.Add(this.lblLeftFileSize);
             this.Controls.Add(this.labelFooterInfo);
             this.Name = "FooterInfoBar";
-            this.Size = new System.Drawing.Size(1218, 48);
+            this.Size = new System.Drawing.Size(1218, 34);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -7,11 +7,10 @@ namespace FileCompare.Interfaces
     public interface IFooterView
     {
         string LeftFileSizeLabel { set; }
-        string RightFileSizeLabel { set; }
-
         string LeftFileModifiedDateLabel { set; }
         string LeftFileCreatedDateLabel { set; }
 
+        string RightFileSizeLabel { set; }
         string RightFileModifiedDateLabel { set; }
         string RightFileCreatedDateLabel { set; }
 
