@@ -10,7 +10,7 @@ namespace FileCompare.Interfaces
         Panel TextPanelControl { get; }
 
         FileViewPresenter Presenter { set; }
-
+        ToolStripButton OpenFile { get; }
         event EventHandler LoadFileClicked;
     }
 }

@@ -12,6 +12,7 @@ namespace FileCompare.Presenters
         private readonly UCFileView _fileView;
         private readonly Panel ScintillaTextPanel;
         private readonly FooterInfoBar _footer;
+        private readonly ToolStripButton _button;
         private static Logger logger = LogManager.GetCurrentClassLogger();
         Scintilla TextArea;
 
@@ -23,12 +24,13 @@ namespace FileCompare.Presenters
             ScintillaTextPanel = _fileView.TextPanelControl;
             _fileView.Load += UCFileView_Load;
             _fileView.LoadFileClicked += toolStripButtonOpenFile_Click;
+            _button = _fileView.OpenFile;
         }
 
         private void toolStripButtonOpenFile_Click(object sender, EventArgs e)
         {
             var dialog = new OpenFileDialog();
-            var leftOrRight = ((ToolStripButton)sender).Name;
+            var parent = _button.GetCurrentParent().Parent.Name;
             //   dialog.Filter = "XML files|*.xml|Rich Text files|*.rtf|Simple Text files|*.txt";
             var result = dialog.ShowDialog();
             try
@@ -41,7 +43,18 @@ namespace FileCompare.Presenters
 
                     FileInfo f = new FileInfo(dialog.FileName);
 
-                    _footer.LeftFileSizeLabel = HelperFunctions.BytesToString(f.Length);
+                    if(parent == "ucFileViewRight") {
+                        _footer.RightFileSizeLabel = HelperFunctions.BytesToString(f.Length);
+                        _footer.RightFileCreatedDateLabel = HelperFunctions.ConvertTimeToString(f.CreationTime);
+                        _footer.RightFileModifiedDateLabel = HelperFunctions.ConvertTimeToString(f.LastWriteTime);
+                    }
+                    else
+                    {
+                        _footer.LeftFileSizeLabel = HelperFunctions.BytesToString(f.Length);
+                        _footer.LeftFileCreatedDateLabel = HelperFunctions.ConvertTimeToString(f.CreationTime);
+                        _footer.LeftFileModifiedDateLabel = HelperFunctions.ConvertTimeToString(f.LastWriteTime);
+                    }
+                    
                     // TODO if (Path.GetExtension(dialog.FileName) == ".rtf") { }
                     // TODO check file type and modify scintilla settings.
                 }

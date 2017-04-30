@@ -21,6 +21,8 @@ namespace FileCompare
 
         public FileViewPresenter Presenter { private get; set; }
 
+        public ToolStripButton OpenFile { get { return toolStripButtonOpenFile; } }
+
         public event EventHandler LoadFileClicked
         {
             add { toolStripButtonOpenFile.Click += value; }

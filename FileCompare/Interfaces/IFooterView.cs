@@ -9,6 +9,12 @@ namespace FileCompare.Interfaces
         string LeftFileSizeLabel { set; }
         string RightFileSizeLabel { set; }
 
+        string LeftFileModifiedDateLabel { set; }
+        string LeftFileCreatedDateLabel { set; }
+
+        string RightFileModifiedDateLabel { set; }
+        string RightFileCreatedDateLabel { set; }
+
         FooterViewPresenter Presenter { set; }
 
         Button CompareButton { get; }
