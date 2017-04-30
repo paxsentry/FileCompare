@@ -13,15 +13,16 @@ namespace FileCompare.Presenters
             footer.Presenter = this;
             _footer.CompareButtonClick += btnCompare_Click;
             _footer.Load += footerInfoBar_Load;
+            _footer.SizeChanged += PositionRightLabels;
         }
 
         private void footerInfoBar_Load(object sender, EventArgs e)
         {
             ResetLabelText();
-            PositionRightLabels();
+            PositionRightLabels(sender, e);
         }
 
-        private void PositionRightLabels()
+        private void PositionRightLabels(object sender, EventArgs e)
         {
             var width = _footer.Size.Width;
             var sizeLabel = _footer.Controls["FileSizeRight"];
