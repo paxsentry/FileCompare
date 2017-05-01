@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.labelFooterInfo = new System.Windows.Forms.Label();
-            this.btnCompare = new System.Windows.Forms.Button();
             this.lblLeftFileSize = new System.Windows.Forms.Label();
             this.FileSizeLeft = new System.Windows.Forms.Label();
             this.FileModDateLeft = new System.Windows.Forms.Label();
@@ -52,16 +51,6 @@
             this.labelFooterInfo.Name = "labelFooterInfo";
             this.labelFooterInfo.Size = new System.Drawing.Size(0, 13);
             this.labelFooterInfo.TabIndex = 0;
-            // 
-            // btnCompare
-            // 
-            this.btnCompare.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnCompare.Location = new System.Drawing.Point(1140, 3);
-            this.btnCompare.Name = "btnCompare";
-            this.btnCompare.Size = new System.Drawing.Size(75, 28);
-            this.btnCompare.TabIndex = 1;
-            this.btnCompare.Text = "Compare";
-            this.btnCompare.UseVisualStyleBackColor = true;
             // 
             // lblLeftFileSize
             // 
@@ -182,7 +171,6 @@
             this.Controls.Add(this.lblLeftFileModDate);
             this.Controls.Add(this.FileModDateLeft);
             this.Controls.Add(this.FileSizeLeft);
-            this.Controls.Add(this.btnCompare);
             this.Controls.Add(this.lblLeftFileSize);
             this.Controls.Add(this.labelFooterInfo);
             this.Name = "FooterInfoBar";
@@ -195,7 +183,6 @@
         #endregion
 
         private System.Windows.Forms.Label labelFooterInfo;
-        private System.Windows.Forms.Button btnCompare;
         private System.Windows.Forms.Label lblLeftFileSize;
         private System.Windows.Forms.Label FileSizeLeft;
         private System.Windows.Forms.Label FileModDateLeft;

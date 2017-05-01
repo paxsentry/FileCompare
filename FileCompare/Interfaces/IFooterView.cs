@@ -15,9 +15,5 @@ namespace FileCompare.Interfaces
         string RightFileCreatedDateLabel { set; }
 
         FooterViewPresenter Presenter { set; }
-
-        Button CompareButton { get; }
-
-        event EventHandler CompareButtonClick;
     }
 }

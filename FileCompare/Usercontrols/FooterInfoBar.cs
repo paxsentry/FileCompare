@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using FileCompare.Interfaces;
 using FileCompare.Presenters;
 using NLog;
@@ -23,14 +22,6 @@ namespace FileCompare
         public string RightFileModifiedDateLabel { set { lblRightFileModDate.Text = value; } }
         public string RightFileCreatedDateLabel { set { lblRightFileCreateDate.Text = value; } }
 
-        public Button CompareButton { get { return btnCompare; } }
-
         public FooterViewPresenter Presenter { private get; set; }
-
-        public event EventHandler CompareButtonClick
-        {
-            add { btnCompare.Click += value; }
-            remove { btnCompare.Click -= value; }
-        }
     }
 }

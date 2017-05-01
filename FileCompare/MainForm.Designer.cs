@@ -37,6 +37,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCompare = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -61,6 +62,7 @@
             this.splitContainer.Panel2.Controls.Add(this.ucFileViewRight);
             this.splitContainer.Size = new System.Drawing.Size(1484, 897);
             this.splitContainer.SplitterDistance = 739;
+            this.splitContainer.SplitterWidth = 2;
             this.splitContainer.TabIndex = 0;
             // 
             // ucFileViewLeft
@@ -73,10 +75,11 @@
             // 
             // ucFileViewRight
             // 
+            this.ucFileViewRight.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ucFileViewRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucFileViewRight.Location = new System.Drawing.Point(0, 0);
             this.ucFileViewRight.Name = "ucFileViewRight";
-            this.ucFileViewRight.Size = new System.Drawing.Size(741, 897);
+            this.ucFileViewRight.Size = new System.Drawing.Size(743, 897);
             this.ucFileViewRight.TabIndex = 0;
             // 
             // footerInfoBar
@@ -118,11 +121,21 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
+            // btnCompare
+            // 
+            this.btnCompare.Location = new System.Drawing.Point(150, -5);
+            this.btnCompare.Name = "btnCompare";
+            this.btnCompare.Size = new System.Drawing.Size(75, 23);
+            this.btnCompare.TabIndex = 3;
+            this.btnCompare.Text = "Compare";
+            this.btnCompare.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 961);
+            this.Controls.Add(this.btnCompare);
             this.Controls.Add(this.footerInfoBar);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.menuStrip1);
@@ -151,6 +164,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.Button btnCompare;
     }
 }
 

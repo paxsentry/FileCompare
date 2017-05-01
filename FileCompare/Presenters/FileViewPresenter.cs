@@ -38,6 +38,7 @@ namespace FileCompare.Presenters
                 if (result == DialogResult.OK)
                 {
                     TextArea.Text = File.ReadAllText(dialog.FileName);
+                    ScintillaTextPanel.Text = TextArea.Text;
                     SetFilePathAndName(dialog.FileName);
                     ScintillaSettings.SetupXML(TextArea);
 

@@ -14,5 +14,11 @@ namespace FileCompare
         public UCFileView LeftFileView { get { return ucFileViewLeft; } }
         public UCFileView RightFileView { get { return ucFileViewRight; } }
         public FooterInfoBar Footer { get { return footerInfoBar; } }
+
+        public event EventHandler CompareButtonClicked
+        {
+            add { btnCompare.Click += value; }
+            remove { btnCompare.Click -= value; }
+        }
     }
 }

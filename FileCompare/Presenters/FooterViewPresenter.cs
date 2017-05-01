@@ -11,7 +11,6 @@ namespace FileCompare.Presenters
         {
             _footer = footer;
             footer.Presenter = this;
-            _footer.CompareButtonClick += btnCompare_Click;
             _footer.Load += footerInfoBar_Load;
             _footer.SizeChanged += PositionRightLabels;
         }
@@ -53,15 +52,7 @@ namespace FileCompare.Presenters
 
         private void btnCompare_Click(object sender, EventArgs e)
         {
-            //UserControl LeftPanel = (this.Parent as MainForm).Controls["SplitContainer"] as UserControl;
-            //UserControl RightPanel = (this.Parent as MainForm).Controls["RightPanel"] as UserControl;
-
-            //if (LeftPanel != null && RightPanel != null)
-            //{
-            //    MessageBox.Show("Jipppiiii!!!!");
-            //}
-
-
+            var leftPanelText = _footer.GetContainerControl();
         }
     }
 }
