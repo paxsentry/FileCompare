@@ -38,7 +38,10 @@ namespace FileCompare.Presenters
             var diffEngine = new diff_match_patch();
             var comapre = diffEngine.diff_main(leftTextAreaText, rightTextAreaText);
             var result = diffEngine.diff_prettyHtml(comapre);
-            MessageBox.Show(result);
+            //var result = diffEngine.diff_text2(comapre);
+
+            _rightFileView.TextPanelControl.Controls[0].Text = result;
+            //MessageBox.Show(result);
         }
     }
 }

@@ -78,7 +78,5 @@ namespace FileCompare.Presenters
         {
             _fileView.FileNameAndPath = filePathAndName;
         }
-
-
     }
 }

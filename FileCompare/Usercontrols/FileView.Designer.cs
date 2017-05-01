@@ -30,9 +30,9 @@
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonOpenFile = new System.Windows.Forms.ToolStripButton();
-            this.TextPanel = new System.Windows.Forms.Panel();
-            this.lblFilePathAndName = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.lblFilePathAndName = new System.Windows.Forms.ToolStripLabel();
+            this.TextPanel = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +57,16 @@
             this.toolStripButtonOpenFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonOpenFile.Name = "toolStripButtonOpenFile";
             this.toolStripButtonOpenFile.Size = new System.Drawing.Size(23, 24);
-            //this.toolStripButtonOpenFile.Click += new System.EventHandler(this.toolStripButtonOpenFile_Click);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 27);
+            // 
+            // lblFilePathAndName
+            // 
+            this.lblFilePathAndName.Name = "lblFilePathAndName";
+            this.lblFilePathAndName.Size = new System.Drawing.Size(0, 24);
             // 
             // TextPanel
             // 
@@ -69,16 +78,6 @@
             this.TextPanel.Size = new System.Drawing.Size(640, 773);
             this.TextPanel.TabIndex = 2;
             // 
-            // lblFilePathAndName
-            // 
-            this.lblFilePathAndName.Name = "lblFilePathAndName";
-            this.lblFilePathAndName.Size = new System.Drawing.Size(0, 24);
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 27);
-            // 
             // UCFileView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -87,7 +86,6 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "UCFileView";
             this.Size = new System.Drawing.Size(643, 803);
-            //this.Load += new System.EventHandler(this.UCFileView_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -98,8 +96,8 @@
         #endregion
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonOpenFile;
-        private System.Windows.Forms.Panel TextPanel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStripLabel lblFilePathAndName;
+        private System.Windows.Forms.Panel TextPanel;
     }
 }
